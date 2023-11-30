@@ -17,3 +17,6 @@ I configured mine through portainer.
   "insecure-registries": ["<ip-for-your-autocustodial-docker-registry>:5000"]
 }
 ```
+
+## Print with working example
+![image](https://github.com/antonioconselheiro/jenkins-with-docker/assets/91137293/c63a807e-654d-4b27-a356-27b55f278cb3)
