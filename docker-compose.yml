@@ -1,0 +1,26 @@
+version: '3.9'
+
+volumes:
+  jenkins_home_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/jenkins_home
+
+services:
+  jenkins-on-docker:
+    image: jenkins-on-docker
+    container_name: jenkins-on-docker
+    user: jenkins
+    build:
+      context: ./.
+      dockerfile: ./Dockerfile
+    ports:
+      - "32500:50000"
+      - "32800:8080"
+    tty: true
+    volumes:
+      - jenkins_home_vol:/var/jenkins_home
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
