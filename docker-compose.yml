@@ -16,12 +16,12 @@ services:
     build:
       context: ./.
       dockerfile: ./Dockerfile
+    network_mode: "host"
     ports:
-      - "32500:50000"
-      - "32800:8080"
+      - "32768:50000"
+      - "32769:8080"
     tty: true
 #    environment:
-#      - DOCKER_OPTS=--insecure-registry=192.168.15.30:5000
 #      - DOCKER_BUILDKIT=0
     volumes:
       - jenkins_home_vol:/var/jenkins_home
