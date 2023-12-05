@@ -17,9 +17,6 @@ services:
       context: ./.
       dockerfile: ./Dockerfile
     network_mode: "host"
-    ports:
-      - "32768:50000"
-      - "32769:8080"
     tty: true
 #    environment:
 #      - DOCKER_BUILDKIT=0
